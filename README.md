@@ -1,45 +1,39 @@
-📌 JDBC Transaction Demo
+ 📌 JDBC Transaction Demo
 
-A simple Java project demonstrating JDBC Transaction Management using MySQL.
-This project explains how to handle multiple database operations safely using commit() and rollback().
+A simple Java project demonstrating **JDBC Transaction Management** using MySQL.
+This project explains how to handle multiple database operations safely using `commit()` and `rollback()`.
 
 🚀 Project Description
 
 This project shows how to:
 
-Connect Java application to MySQL database using JDBC
-
-Disable auto-commit mode
-
-Execute multiple SQL queries in a single transaction
-
-Commit transaction if all queries execute successfully
-
-Rollback transaction if any query fails
-
-Handle SQL exceptions properly
+* Connect Java application to MySQL database using JDBC
+* Disable auto-commit mode
+* Execute multiple SQL queries in a single transaction
+* Commit transaction if all queries execute successfully
+* Rollback transaction if any query fails
+* Handle SQL exceptions properly
 
 This concept is widely used in real-world applications like:
 
-Banking systems
+* Banking systems
+* Payment processing systems
+* Order management systems
 
-Payment processing systems
-
-Order management systems
+---
 
 🛠️ Technologies Used
 
-Java (JDK 8 or above)
+* Java (JDK 8 or above)
+* JDBC
+* MySQL
+* Maven
+* IntelliJ IDEA
 
-JDBC
+---
+ 📂 Project Structure
 
-MySQL
-
-Maven
-
-IntelliJ IDEA
-
-📂 Project Structure
+```
 JDBC-Transaction-Demo
 │
 ├── src/main/java
@@ -47,71 +41,102 @@ JDBC-Transaction-Demo
 │
 ├── pom.xml
 └── .gitignore
-⚙️ Database Setup
-1️⃣ Create Database
+```
+
+---
+
+ ⚙️ Database Setup
+
+ 1️⃣ Create Database
+
+```sql
 CREATE DATABASE spring_fist;
-2️⃣ Create Table
+```
+ 2️⃣ Create Table
+
+```sql
 CREATE TABLE students (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50),
     marks INT
 );
-3️⃣ Update Database Credentials in Java File
+```
+
+ 3️⃣ Update Database Credentials in Java File
+
+```java
 private static final String URL = "jdbc:mysql://localhost:3306/spring_fist";
 private static final String USER = "root";
 private static final String PASSWORD = "your_password";
-🔄 How Transaction Works
+```
 
-Disable auto-commit:
+---
 
+ 🔄 How Transaction Works
+
+1. Disable auto-commit:
+
+```java
 con.setAutoCommit(false);
+```
 
-Execute multiple SQL operations.
+2. Execute multiple SQL operations.
 
-If all operations succeed:
+3. If all operations succeed:
 
+```java
 con.commit();
+```
 
-If any operation fails:
+4. If any operation fails:
 
+```java
 con.rollback();
+```
 
-This ensures Atomicity (ACID property) — either all database operations succeed or none are applied.
+This ensures **Atomicity (ACID property)** — either all database operations succeed or none are applied.
 
-▶️ How to Run
+---
 
-Clone the repository:
+ ▶️ How to Run
 
+1. Clone the repository:
+
+```
 git clone https://github.com/PrajapatiPushkar/JDBC-Transaction-Demo.git
+```
 
-Open the project in IntelliJ IDEA.
+2. Open the project in IntelliJ IDEA.
 
-Make sure MySQL server is running.
+3. Make sure MySQL server is running.
 
-Update database username and password.
+4. Update database username and password.
 
-Run JDBCDemo.java.
+5. Run `JDBCDemo.java`.
 
-📚 Key Concepts Covered
+---
 
-JDBC Connection
+ 📚 Key Concepts Covered
 
-PreparedStatement
+* JDBC Connection
+* PreparedStatement
+* Transaction Management
+* Commit & Rollback
+* Exception Handling
+* ACID Properties
 
-Transaction Management
+---
 
-Commit & Rollback
-
-Exception Handling
-
-ACID Properties
-
-🎯 Purpose
+ 🎯 Purpose
 
 This project is created for learning and understanding JDBC transaction handling in Java backend development.
 
-👨‍💻 Author
+---
+
+ 👨‍💻 Author
 
 Pushkar Prajapati
 B.Tech CSE Student
 Aspiring Java Backend Developer 🚀
+
+---
